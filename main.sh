@@ -1,5 +1,6 @@
 #!/bin/bash
-
+apt update apt upgrade -y 
+apt install python 
 # Function to display a colourful figlet banner (rainbow lines)
 rainbow_figlet() {
     local text="$1"
@@ -15,7 +16,7 @@ rainbow_figlet() {
 while true; do
     clear
     # Display colourful banner
-    rainbow_figlet "Onxx-tool"
+    rainbow_figlet "OXYGEN"
     echo -e "\e[1;32m=========================================\e[0m"
     echo -e "\e[1;33m1.\e[0m \e[1;36mInstall B-P\e[0m"
     echo -e "\e[1;33m2.\e[0m \e[1;36mView Info (Instagram & YouTube)\e[0m"
