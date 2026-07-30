@@ -9,9 +9,10 @@ import random
 import subprocess
 from datetime import datetime
 
-# ============ TIME & GITHUB ============
 current_time = datetime.now().strftime("%H:%M:%S")
+
 print(f"\033[38;5;214m[{current_time}]\033[0m \033[1;32m[INFO]:\033[0m Opening GitHub in Chrome...")
+
 try:
     subprocess.run([
         "am",
@@ -20,9 +21,9 @@ try:
         "-d", "https://github.com/onxx-x146",
         "com.android.chrome"
     ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+
 except subprocess.CalledProcessError:
     print(f"\033[38;5;214m[{current_time}]\033[0m \033[1;33m[WARNING]:\033[0m Could not open Chrome.")
-
 # ============ COLORS ============
 class Colors:
     RED     = "\033[91m"
@@ -66,7 +67,7 @@ def menu():
 {Colors.CYAN}{Colors.BOLD}
 ╔══════════════════════════════════════════════╗
 ║       🚀  BANNER MAKER TOOL 🚀              ║
-║       Created by: [Hari Jadhav 🫅🏻]          ║
+║       Created by: [YOUR NAME]                ║
 ╚══════════════════════════════════════════════╝
 {Colors.RESET}
 {Colors.GREEN}  [1] 🎨 Cool Banner Generator
@@ -106,20 +107,10 @@ def main():
 
     while True:
         menu()
-        # ---------- FIX: Robust input handling ----------
-        try:
-            choice = int(input(f"  {Colors.GREEN}[!] Select: {Colors.RESET}").strip())
-        except ValueError:
-            print(f"  {Colors.RED}❌ Please enter a valid number (1-5).{Colors.RESET}")
-            input("Press Enter to continue...")
-            continue
+        choice = input(f"  {Colors.GREEN}[!] Select: {Colors.RESET}").strip()
 
-        if choice == 1:
+        if choice == "1":
             text = input(f"  {Colors.YELLOW}[?] Enter text: {Colors.RESET}").strip()
-            if not text:
-                print(f"  {Colors.RED}Text cannot be empty!{Colors.RESET}")
-                input("Press Enter to continue...")
-                continue
             font = input(f"  {Colors.YELLOW}[?] Font (default=slant): {Colors.RESET}").strip()
             if not font:
                 font = "slant"
@@ -128,14 +119,10 @@ def main():
             except Exception:
                 print(f"  {Colors.RED}Font not found, using default slant{Colors.RESET}")
                 banner_text(text, font="slant")
-            input("\nPress Enter to continue...")
+            print()
 
-        elif choice == 2:
+        elif choice == "2":
             text = input(f"  {Colors.YELLOW}[?] Enter text: {Colors.RESET}").strip()
-            if not text:
-                print(f"  {Colors.RED}Text cannot be empty!{Colors.RESET}")
-                input("Press Enter to continue...")
-                continue
             font = input(f"  {Colors.YELLOW}[?] Font (default=slant): {Colors.RESET}").strip()
             if not font:
                 font = "slant"
@@ -143,25 +130,22 @@ def main():
                 animated_banner(text, font=font)
             except Exception:
                 animated_banner(text, font="slant")
-            input("\nPress Enter to continue...")
+            print()
 
-        elif choice == 3:
+        elif choice == "3":
             list_fonts()
-            input("Press Enter to continue...")
 
-        elif choice == 4:
+        elif choice == "4":
             print()
             random_hacker_banner()
             print()
-            input("Press Enter to continue...")
 
-        elif choice == 5:
+        elif choice == "5":
             print(f"\n  {Colors.RED}Bye! 👋{Colors.RESET}\n")
             sys.exit(0)
 
         else:
-            print(f"  {Colors.RED}❌ Invalid choice! Please select 1-5.{Colors.RESET}")
-            input("Press Enter to continue...")
+            print(f"  {Colors.RED}Invalid choice! Try again.{Colors.RESET}")
 
 if __name__ == "__main__":
     main()
