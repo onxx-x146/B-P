@@ -72,10 +72,10 @@ def menu():
 ╚══════════════════════════════════════════════╝
 {Colors.RESET}
 {Colors.GREEN}  [1] 🎨 Cool Banner Generator
-{Colors.YELLOW}  [2] 🔥 Animated Banner
-{Colors.BLUE}  [3] 📋 Available Fonts List
-{Colors.MAGENTA}  [4] 🛡️  Random Hacker-Style Banner
-{Colors.RED}   [5] ❌ Exit
+{Colors.YELLOW} [2] 🔥 Animated Banner
+{Colors.BLUE}   [3] 📋 Available Fonts List
+{Colors.MAGENTA}[4] 🛡️  Random Hacker-Style Banner
+{Colors.RED}    [5] ❌ Exit
 {Colors.RESET}
 """)
 
